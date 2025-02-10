@@ -1,0 +1,100 @@
+/* Além do padrão inserimos iremos colocar o "box-sizing: border-box" nas pseudo-classes "before" e "after", que serão muito utilizadas nesse projeto */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Aqui serão inserirdas as iformações apenas no padrão */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit; /* reseta todas as configurações padrões de fontes */
+
+  /* deixando as fontos mais suaves nos navegadores */
+  -webkit-font-smoothing: antialiased; /* para o chrome, safari e edje */
+  -moz-osx-font-smoothing: grayscale; /* para o firefox */
+}
+
+:root {
+  /* cores do projeto */
+  --bg-color: #09090B;
+  --surface-color: #18181b;
+  --stroke-color: #27272a;
+  --text-color-primary: #f4f4f5;
+  --text-color-secondary: #a1a1aa;
+  --brand-color-primary: #f7b733;
+  --brand-color-secondary: #fc4a1a;
+
+  /* Fontes do projeto */
+  --ff-sans: 'Inter', system-ui, sans-serif; /* ff = font family */
+
+  --fw-base: 400; /* fw = font weigth */
+  --fw-md: 500;
+  --fw-bold: 800;
+
+  /* Vamos inserir os tamanhos de fonte para o padrão mobile, posteriormente faremos os ajustes para o tamanho desktop */
+  --fs-sm: 0.875rem; /* fs = font size */
+  --fs-base: 1rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 2.5rem;
+}
+
+  /* Adicionando informações padrões do projeto no html */
+html {
+  font-family: var(--ff-sans); /* font family padrão */
+  font-weight: var(--fw-base); /* font weigth padrão */
+  font-size: var(); /*font size padrão */
+  line-height: 1.6; /* o line-height padrão foi retirado do figmna no intem paragraph */
+  color: var(--text-color-primary); /* cor de fonte padrão */
+}
+
+  /* Adicionando informações padrões do projeto no body */
+body {
+  background-color: var(--bg-color);
+}
+
+  /* Adicionando informações padrões do projeto no H1, H2 e H3 */
+h1, h2, h3 {
+  line-height: 1.2; /* o line-height padrão para h1, h2 e h3 foi retirado do figmna */
+  color: var(--text-color-primary);
+  font-weight: var(--fw-bold); /* o line-height padrão para h1, h2 e h3 foi retirado do figmna */
+  letter-spacing: -0.04em; /* essa info pode ser encontrada no figma, clicando no texto e se for necessário pode clicar com botão direito -> CopyPast as -> Copy as code -> CSS e colar no VSCode para encontrar o letter-spacing */
+}
+
+h1 {
+  font-size: var(--fs-2xl);
+}
+
+h2 {
+  font-size: var(--fs-xl);
+}
+
+h3 {
+  font-size: var(--fs-lg);
+}
+
+  /* Adicionando informações padrões do projeto nos links */
+a{
+  text-decoration: none; /* para retirar o estilo padrão dos links */
+  color: inherit; /* para indicar que a cor será igual ou herdada a do elemento pai */
+}
+
+  /* Adiconando informações padrões do projeto para itens de lista */
+ul[role="list"] {
+  list-style: none;
+
+    /* O códito acima diz: sempre que uma "ul" tiver o "role="list", ele será definido como uma lista porém sem que a "bolinha" da frente apareça*/
+}
+
+  /* Alterando o tamanho das fontes para o padrão do desktop */
+@media (width >= 80em) {
+  :root {
+    --fs-lg: 2rem;
+    --fs-xl: 3rem;
+    --fs-2xl: 4rem;
+  }
+
+  /* O códito acima diz: se a largura da tela form maior ou = a 1280px ou 80em, então o tamanho das fontes no root serão os estabelecidos aqui, mudando então os tamanhos das fontos para telas maiores */
+}
