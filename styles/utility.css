@@ -1,0 +1,61 @@
+  /* Criando utilitários para que os paddings-block do eixo y (topo e final) ja tenham o padrão quando aplicados  */
+.py-base {
+  padding-block: var(--py-base);
+}
+
+.py-lg {
+  padding-block: var(--py-lg);
+}
+
+.py-xl {
+  padding-block: var(--py-xl);
+}
+
+ /* Criando utilitários para que os paddings-inline do eixo x (esquerda e direita) ja tenham o padrão quando aplicados  */
+.px-lg {
+  padding-inline: var(--px-lg);
+}
+
+  /* Quando aplicado em uma dive no mobile, a div irá sumir */
+.desktop-only {
+  display: none;
+  /* Essa classe ".desktop-only" servirá para esconder alguns conteúdos no mobile ou diexa-los aparente no desktop */
+}
+
+  /* Em tela pequena (mobile) essa classe fará com que um elemento fique um abaixo do outro */
+.even-columns {
+  display: grid;
+  gap: 1rem;
+}
+
+.container {
+  --max-width: 375px;
+  width: min(var(--max-width), 100% - var(--px-lg) * 2);
+  margin-inline: auto;
+  border: solid violet;
+  /* var(--max-width): o valor máximo de largura (375px), para telas mobile. */
+  /* --px-lg é uma variável que armazena o valor 1.5rem (1.5 vezes o tamanho da fonte padrão) e está no global.css */
+  /* 100% - var(--px-lg) * 2: a largura total disponível (100% do espaço) menos o espaçamento nas laterais (1.5rem de cada lado, totalizando 3rem). */
+  /* Isso significa que o elemento .container terá: */
+  /* No máximo 375px de largura. */
+  /* Se o espaço disponível for menor que 375px, ele ocupará 100% do espaço menos o espaçamento (1.5rem de cada lado). */
+  /* Se estiver com dúvida adicione border solid e margim-inline:auto e faça testes para ver a diferença   */
+}
+
+@media (width >= 80em) {
+  .container {
+    --max-width: 80em;
+    /* alterando o var(--max-width): o valor máximo de largura (80em ou 1280px), para telas desktop. */
+  }
+
+  /* Quando aplicado em uma dive no desktop, a div irá aparecer com o display incial da tag, se for div inblock, se for span inline*/
+  .desktop-only {
+    display: initial;
+  }
+
+  /* Em tela grande (desktop) essa classe fará com que um elemento fique um ao lado do outro, em colunas */
+  .even-columns {
+    grid-auto-flow: column; /* os elementos sempre serão posicionados como colunas */
+    grid-auto-columns: 1fr; /* as colunas se dividirão por espaços iguais de acordo com o nº de colunas */
+}
+}

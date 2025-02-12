@@ -39,6 +39,12 @@
   --fs-lg: 1.25rem;
   --fs-xl: 1.5rem;
   --fs-2xl: 2.5rem;
+
+  /* Vamos definir variáveis para telas pequenas (mobile) */
+  --py-base: 1rem; /* padding base do topo e final da tela para mobile */
+  --py-lg: 1.5rem; /* padding base do topo e final para algumas caixas no mobile */
+  --py-xl: 3rem; /* padding base do topo e final da tela das seções para mobile */
+  --px-lg: 1.5rem; /* padding das laterais (lado esquerdo e direito) para mobile */
 }
 
   /* Adicionando informações padrões do projeto no html */
@@ -88,13 +94,19 @@ ul[role="list"] {
     /* O códito acima diz: sempre que uma "ul" tiver o "role="list", ele será definido como uma lista porém sem que a "bolinha" da frente apareça*/
 }
 
-  /* Alterando o tamanho das fontes para o padrão do desktop */
 @media (width >= 80em) {
   :root {
+    /* Alterando o tamanho das fontes para o padrão do desktop */
     --fs-lg: 2rem;
     --fs-xl: 3rem;
     --fs-2xl: 4rem;
+
+    /* Vamos definir variáveis de padding para telas grandes (desktop) */
+    --py-base: 1.5rem; /* padding base do topo e final da tela para descktop */
+    --py-lg: 2.5rem; /* padding base do topo e final para algumas caixas no descktop */
+    --py-xl: 5rem; /* padding base do topo e final da tela das seções para descktop */
+    --px-lg: 2rem; /* padding das laterais (lado esquerdo e direito) para descktop */
   }
 
-  /* O códito acima diz: se a largura da tela form maior ou = a 1280px ou 80em, então o tamanho das fontes no root serão os estabelecidos aqui, mudando então os tamanhos das fontos para telas maiores */
+  /* O códito acima diz: se a largura da tela form maior ou = a 1280px ou 80em, então o tamanho das fontes, do padding e outros elemtentos prsenteso no root serão os estabelecidos aqui, mudando então os tamanhos para telas maiores */
 }
