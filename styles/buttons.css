@@ -1,0 +1,73 @@
+  /* Criando o botão padrão */
+.btn {
+  /* Criando classes utiliárias para faciltar a ciração do hover do botão, no hover precisaremos apenas alterar a cor das classes utilitárias */
+  --btn-bg-color: var(--text-color-primary);
+  --btn-color: var(--bg-color);
+  
+  border: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content; /* o conteúdo que estiver dentro do botão se encaixará dentro do botão */
+
+  border-radius: .5rem;
+
+  font: var(--fw-md) var(--fs-base)/1.5erm var(--ff-sans);
+
+  cursor: pointer;
+
+  /* Definindo dor de fundo e da font do btn-primary, poderia ser feito fora da classe "btn", em uma outra classe */
+  /* Aqui também vamos utilizar classes utilitárias ciradas no início, no hover precisaremos apenas alterar a cor das classes utilitárias */
+  background: var(--btn-bg-color);
+  color: var(--btn-color)
+}
+
+  /* Criando o hover do botão e utilizando as classes utiliárias criadas dentro do "btn" */
+.btn:hover {
+  --btn-bg-color: linear-gradient(  /* criar gradiente */
+    90deg, /* oreintação da esqueda para a direita */
+    var(--brand-color-secondary) 0%, /* começando gradiente nessa cor e 0% */
+    var(--brand-color-primary) 100%  /* terminando gradiente nessa cor em 100% */
+    ); 
+  --btn-color: var(--surface-color);
+}
+
+.btn-sm {
+  padding: .5rem 1rem;
+  font-size: var(--fs-sm);
+}
+
+.btn-md {
+  padding: .75rem 1.5rem;
+  font-size: var(--fs-base);
+}
+
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+}
+
+/* No btn-secondary, devido ao degrade na borda e letras, precisamos utilizar o "aria-label" no html */
+.btn[aria-label] { 
+  position: relative;
+
+  &::before{
+    content: "";
+    position: absolute;
+    border-radius: inherit; /* para herdar a borda que já foi definad na classe btn */
+    inset: 1.5px; /* para criar a borda, se fosse zer todo o botão teria a cor do atributo background-color */
+    background-color: var(--bg-color);
+  }
+
+  &::after { /* vai "cirar" um elemento dentro do html */
+    content: attr(aria-label); /* o elemento criado é o "aria-label" que contem a plavara dentro do botão */
+    background: var(--btn-bg-color); /* so vai ser utilizado para criar a borda lá no ::before, é a "cor" do inset */
+    -webkit-background-clip: text; /* para que o texto tenha o degrade */
+    background-clip: text; /* também para que o texto tenha o degrade */
+    color: transparent; /* para que o texto tenha a cor do degrade e não a cor definida no btn-primary */
+    position: relative;
+    z-index: 1; /* para ele subir um element, "aparecer na frente" */
+  }
+
+}

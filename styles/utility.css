@@ -16,6 +16,18 @@
   padding-inline: var(--px-lg);
 }
 
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.gap-1 {
+  gap: 1rem;
+}
+
   /* Quando aplicado em uma dive no mobile, a div irá sumir */
 .desktop-only {
   display: none;
@@ -27,6 +39,7 @@
   display: grid;
   gap: 1rem;
 }
+
 
 .container {
   --max-width: 375px;
