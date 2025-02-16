@@ -1,0 +1,46 @@
+/* Vamos utilizar a classe "social" dentro de cada "a" (html) pois precismaos definir algumas caracteristicas das imagens, como altura, largura e display. Se não fosse preciso definir essas carateristicas, poderiamos fazer sem a utilização da classe*/
+
+a.social{
+  --bg-img: "";
+  background-image: var(--bg-img);
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+
+  /* Para que funcione e não fique um fundo preto precisamos alterar os elementos abaixo para initial, uma vez que no hover de "a" no "global.css" ele esta defino para "text" para que lá o degrade aparece no texto */
+  -webkit-background-clip: initial;
+  background-clip: initial;
+
+  &[aria-label="tiktok"] {
+    --bg-img: url(../assets/icons/tiktok.svg);
+
+    &:hover {
+      --bg-img: url(../assets/icons/tiktok-hover.svg);
+    }
+  }
+
+  &[aria-label="instagram"] {
+    --bg-img: url(../assets/icons/instagram.svg);
+
+    &:hover {
+      --bg-img: url(../assets/icons/instagram-hover.svg);
+    }
+  }
+
+  &[aria-label="twitter"] {
+    --bg-img: url(../assets/icons/twitter.svg);
+
+    &:hover {
+    --bg-img: url(../assets/icons/twitter-hover.svg);
+    }
+  }
+
+  &[aria-label="discord"] {
+    --bg-img: url(../assets/icons/discord.svg);
+
+    &:hover {
+    --bg-img: url(../assets/icons/discord-hover.svg);
+    }
+
+  }
+}

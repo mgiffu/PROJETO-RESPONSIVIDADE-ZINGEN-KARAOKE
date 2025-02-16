@@ -87,6 +87,19 @@ a{
   color: inherit; /* para indicar que a cor será igual ou herdada a do elemento pai */
 }
 
+ /* Adicionando hover aos links */
+a:hover {
+  background: linear-gradient(
+    90deg,
+    var(--brand-color-secondary) 0%,
+    var(--brand-color-primary) 100%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
   /* Adiconando informações padrões do projeto para itens de lista */
 ul[role="list"] {
   list-style: none;
