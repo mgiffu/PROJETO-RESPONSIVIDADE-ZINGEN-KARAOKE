@@ -1,0 +1,6 @@
+header {
+  /* selecionando o primeiro "a" que é a logo */
+  & a:first-child {
+    margin-right: auto; /* para preencher todo o espaço entre ele e os outros "a's", jogando todos os outros para o canto direito da tela */
+  }
+}

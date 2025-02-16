@@ -31,6 +31,11 @@
     var(--brand-color-primary) 100%  /* terminando gradiente nessa cor em 100% */
     ); 
   --btn-color: var(--surface-color);
+
+  /* Para que funcione e não fique um fundo preto precisamos alterar os elementos abaixo para initial, uma vez que no hover de "a" no "global.css" ele esta defino para "text" para que lá o degrade aparece no texto */
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  color: var(--btn-color) /* para definir a cor de fundo */
 }
 
 .btn-sm {
@@ -70,4 +75,17 @@
     z-index: 1; /* para ele subir um element, "aparecer na frente" */
   }
 
+}
+
+/* Para definir o tamanho dos botões em telas grandes (desktop) */
+@media (width >= 80em) {
+  .btn-sm {
+    padding: .75rem 1.5rem;
+    font-size: var(--fs-base);
+  }
+  
+  .btn-md {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+  }
 }

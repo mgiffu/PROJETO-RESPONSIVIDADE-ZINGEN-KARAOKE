@@ -24,8 +24,17 @@
   display: grid;
 }
 
+/* Classe para alinhar intens ao centro no exio Y */
+.items-center {
+  align-items: center;
+}
+
 .gap-1 {
   gap: 1rem;
+}
+
+.gap-1\.5 {
+  gap: 1.5rem;
 }
 
   /* Quando aplicado em uma dive no mobile, a div irá sumir */
@@ -45,7 +54,7 @@
   --max-width: 375px;
   width: min(var(--max-width), 100% - var(--px-lg) * 2);
   margin-inline: auto;
-  border: solid violet;
+  /* border: solid violet; */
   /* var(--max-width): o valor máximo de largura (375px), para telas mobile. */
   /* --px-lg é uma variável que armazena o valor 1.5rem (1.5 vezes o tamanho da fonte padrão) e está no global.css */
   /* 100% - var(--px-lg) * 2: a largura total disponível (100% do espaço) menos o espaçamento nas laterais (1.5rem de cada lado, totalizando 3rem). */
