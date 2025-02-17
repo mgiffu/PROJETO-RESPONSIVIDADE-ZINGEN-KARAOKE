@@ -81,6 +81,11 @@ h3 {
   font-size: var(--fs-lg);
 }
 
+img {
+  max-width: 100%;
+  display: inline-block;
+}
+
   /* Adicionando informações padrões do projeto nos links */
 a{
   text-decoration: none; /* para retirar o estilo padrão dos links */
