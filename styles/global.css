@@ -117,7 +117,7 @@ ul[role="list"] {
     /* Vamos definir variáveis de padding para telas grandes (desktop) */
     --py-base: 1.5rem; /* padding base do topo e final da tela para descktop */
     --py-lg: 2.5rem; /* padding base do topo e final para algumas caixas no descktop */
-    --py-xl: 5rem; /* padding base do topo e final da tela das seções para descktop */
+    --py-xl: 5rem; /* padding base do topo e final da tela entre as seções para descktop */
     --px-lg: 2rem; /* padding das laterais (lado esquerdo e direito) para descktop */
   }
 

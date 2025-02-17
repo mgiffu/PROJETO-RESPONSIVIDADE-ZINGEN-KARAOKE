@@ -1,0 +1,49 @@
+#hero {
+  text-align: center; /* para alinhar o texto no centro do eixo X */
+
+  /* para definir o tamano da imagem de barras de música no mobile */
+  & img[src*="music"] { /* "src*=" quer dizer que ele irá procurar qualquer elemento que tiver as letras "music" e aplicar as configurações especificadas aqui */
+    width: 12.875rem;
+  }
+
+  & h1 {
+    margin-top: 1rem;
+  }
+
+  /* estilizando o "p" */
+  & p {
+    font: var(--fw-md) var(--fs-lg)/1.4 var(--ff-sans); /* peso, tamanho, altura da linha e fonte */
+    color: var(--text-color-secondary);
+    margin-top: .5rem;
+  }
+
+  & .buttons {
+    justify-content: center;
+    margin-top: 2rem;
+  }
+}
+
+
+@media (width >= 80rem) {
+  #hero {
+    background: url(../assets/bg-hero-desktop.svg) no-repeat bottom center/contain;
+    padding-bottom: 15rem;
+
+    /* para definir o tamano da imagem de barras de música no desktop */
+    & img[src*="music"] { /* "src*=" quer dizer que ele irá procurar qualquer elemento que tiver as letras "music" e aplicar as configurações especificadas aqui */
+      width: 25.75rem;
+    }
+
+    & h1 {
+      margin-top: 1.5rem;
+    }
+
+    & p {
+      margin-top: 1rem;
+    }
+
+    & .buttons {
+      margin-top: 3rem;
+    }
+  }
+}
