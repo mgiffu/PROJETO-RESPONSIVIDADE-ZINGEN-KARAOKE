@@ -6,3 +6,5 @@
 @import url(hero.css);
 @import url(sections.css);
 @import url(about.css);
+@import url(cards.css);
+@import url(features.css) (width >= 80em); /* o features.css só sera importando se a largura da tela for maior ou igual a 1280 px */
