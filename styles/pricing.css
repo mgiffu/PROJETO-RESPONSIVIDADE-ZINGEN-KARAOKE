@@ -1,0 +1,126 @@
+#pricing {
+  /* vamos criar uma utility para o tamanho da fonte do preço, ela tem tamanhos diferentes no desktop e mobile, isso vai facilar a alteração do tamanho nas diferentes telas */
+  --fs-price: 2rem;
+
+  & header {
+    text-align: center;
+  }
+
+  & .cards {
+    margin-top: 2rem;
+  }
+
+  & h3 {
+    font-size: 1.25rem;
+    margin-top: 0; /* para retirar um margin top que já estava pré-definido com algum utility */
+  }
+
+  & .card p {
+    margin-top: .25rem;
+  }
+
+  & zin-pricing {
+    display: block;
+    padding-block: 1.5rem;
+    font: var(--fw-bold) var(--fs-price)/1.2 var(--ff-sans);
+  }
+
+  & zin-pricing small {
+    font: var(--fw-base) 1rem/125% var(--ff-sans);
+    color: var(--text-color-secondary);
+  }
+  
+  & .btn {
+    width: 100%; /* para que o botão ocupe 100% da largura disponível */
+  }
+
+  & .separator {
+    height: 1px;
+    margin-block: 2rem;
+    background: radial-gradient(var(--text-color-secondary), var(--surface-color) 70%);
+  }
+
+  & li {
+    color: var(--text-color-secondary);
+    background: url(../assets/icons/Check.svg) no-repeat;
+    padding-left: 2rem;
+  }
+  
+  & ul + small {
+    display: block; /* por padrão o small é inline */
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: var(--text-color-secondary);
+  }
+
+  & .premium {
+    position: relative;
+
+    & .card {
+      padding-top: 4.5rem;
+
+      /* criando a caixinha degrade laranja da div premium */
+      & > span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: .75rem 2rem;
+        text-transform: uppercase;
+        
+        font: 600 var(--fs-sm) var(--ff-sans);
+        letter-spacing: 0.08em;
+        color: var(--bg-color);
+
+        background: linear-gradient(
+          90deg,
+          var(--brand-color-secondary) 0%,
+          var(--brand-color-primary) 100%
+          );
+        
+        border-top-left-radius: 1.5rem;
+        border-bottom-right-radius: 1.5rem;
+      }
+    }
+
+    /* criando a borda degrada da div premium */
+    padding: 2px; /* para fazer com que o elemento before seja um pouco maior que o card, dando esse feito da borda degrade */
+    &::before {
+      content: "";
+      background: linear-gradient(
+        90deg,
+        var(--brand-color-secondary) 0%,
+        var(--brand-color-primary) 100%
+      );
+      position: absolute;
+      inset: 0;
+      border-radius: 1.5rem;
+      z-index: -1; /* para todo esse elemento do before para traz do card */
+    }
+  }
+
+  @media (width >= 80em) {
+    --fs-price: 2.5rem;
+
+    & header {
+      width: 50rem;
+      margin-inline: auto; /* para alinhar o texto ao centro no eixo X */
+    }
+
+    /* para dar um espacamento na parte de baixo do card, o que fará com que ele fique maior que os outros */
+    & .premium .card{
+      padding-bottom: 6rem;
+    }
+
+    /* no figma é possivel observar que o separtor do terceiro card tem o margin block um pouco menor */
+    & .card:nth-child(3) .separator {
+      margin-block: 1.5rem;
+    }
+
+    /* para que os botões no desktop fiquem do mesmo tamanho que o do mobile, esse é o padrão do encontrado no figma */
+    .btn-md {
+      padding: .75rem 1.5rem;
+      font-size: var(--fs-base);
+    }
+
+  }
+}
