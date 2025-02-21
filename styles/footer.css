@@ -1,0 +1,61 @@
+footer {
+  color: var(--text-color-secondary);
+  font-weight: var(--fw-md);
+
+  & .container {
+    padding-inline: 3rem;
+  }
+
+  & .container,
+  & .top {
+    gap: 3rem;
+  }
+
+  & nav.even-columns {
+    gap: 4rem;
+  }
+
+  & .top ul {
+    align-content: start; /* para que os itens do LEGAL fiquem alinhados no início */
+  }
+
+  & .title {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brand-color-primary);
+  }
+
+  & .botton {
+    flex-wrap: wrap;
+
+    & > div {
+      margin-right: auto; /* para jogar o span copy no canto direito da página */
+    }
+
+    & span {
+      font-size: .875rem;
+    }
+  }
+
+  @media (width >= 80em) {
+    & .container {
+      padding-inline: 0;
+      padding-bottom: 2rem;
+    }
+
+    & .top {
+      grid-template-columns: auto 1fr;
+
+      & nav {
+        margin-left: auto; /* para jogar o nav no canto direito da página */
+        
+        & ul {
+          width: 14rem;
+        }
+      }
+
+    }
+
+  }
+}

@@ -55,7 +55,9 @@ html {
   line-height: 1.6; /* o line-height padrão foi retirado do figmna no intem paragraph */
   color: var(--text-color-primary); /* cor de fonte padrão */
 
-  overflow-x: hidden; /* apra não ter rolamento no eixo horizontal */
+  overflow-x: hidden; /* para não ter rolamento no eixo horizontal */
+
+  scroll-behavior: smooth; /* para fazer uma rolagem quando tem interaçaõ com os botões de section */
 }
 
   /* Adicionando informações padrões do projeto no body */
