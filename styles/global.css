@@ -63,6 +63,8 @@ html {
   /* Adicionando informações padrões do projeto no body */
 body {
   background-color: var(--bg-color);
+
+  overflow-x: hidden; /* para não ter rolamento no eixo horizontal */
 }
 
   /* Adicionando informações padrões do projeto no H1, H2 e H3 */
