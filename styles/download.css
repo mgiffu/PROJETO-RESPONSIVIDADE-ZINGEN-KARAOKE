@@ -1,0 +1,33 @@
+#download {
+  .card {
+    padding: 3rem 1.5rem 15rem; /* o 15rem vai funcionar como altura do card, pois a imagem é absoluta em relação ao card */
+    position: relative;
+
+    & > img {
+      position: absolute;
+      width: 14.5rem;
+      bottom: 0;
+      right: -3.5rem;
+    }
+  }
+
+  .buttons {
+    flex-wrap: wrap; /* se o espaço for menor do que a largura dos botões o botão da direita vai para baixo */
+    margin-top: 2rem;
+  }
+
+  @media (width >= 80em) {
+    .card {
+      padding: 8.75rem 5rem;
+
+      /* para selecionar a primeira div dentro do da div com a class card */
+      & > :nth-child(1) {
+        max-width: 40rem;
+      }
+
+      & > img {
+        width: 29.125rem;
+      }
+    }
+  }
+}
